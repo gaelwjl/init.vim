@@ -1,0 +1,50 @@
+local api = vim.api
+
+-- toggle file browser extensions
+api.nvim_set_keymap(
+	"n",
+	"<leader>fb",
+	":Telescope file_browser<CR>",
+	{ noremap = true })
+-- open file_browser with the path of the current buffer
+api.nvim_set_keymap(
+	"n",
+	"<leader>fb",
+	":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+	{ noremap = true }
+)
+
+api.nvim_set_keymap(
+	"n",
+	"<leader>nf",
+	":NvimTreeFindFile<CR>",
+	{ noremap = true }
+)
+
+api.nvim_set_keymap(
+	"n",
+	"<leader>nt",
+	":NvimTreeToggle<CR>",
+	{ noremap = true }
+)
+
+
+
+------ file search and find in project command mappings ------
+-- map Ctrl-q (terminals don't recognize ctrl-tab) (recent files) to show all
+-- files in the buffer
+-- Ctrl-I maps to tab
+-- But it destroys the C-i mapping in vim. Which is used to kind of go in and
+-- used in conjunction with C-o.
+-- map ctrlp to open file search
+api.nvim_set_keymap("n", "<C-p>", ":Files<CR>", { noremap = true })
+-- go to next buffer
+api.nvim_set_keymap("n", "gn", ":bn<cr>", { noremap = true })
+-- go to previous buffer
+api.nvim_set_keymap("n", "gp", ":bp<cr>", { noremap = true })
+
+api.nvim_set_keymap("i", "jk", "<esc>", { noremap = true })
+api.nvim_set_keymap("c", "jk", "<esc>", { noremap = true })
+api.nvim_set_keymap("v", "jk", "<esc>", { noremap = true })
+-- run the command :CompileRun
+api.nvim_set_keymap('n', '<leader>cr', ':CompileRun<CR>', { noremap = true })
