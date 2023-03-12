@@ -84,7 +84,6 @@ require('packer').startup(function(use)
   use { "mg979/vim-visual-multi", branch = 'master' }
 
   use 'mbbill/undotree'
-  use 'theprimeagen/harpoon'
   use 'puremourning/vimspector'
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
