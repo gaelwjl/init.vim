@@ -37,7 +37,6 @@ api.nvim_set_keymap("v", "jk", "<esc>", { noremap = true })
 -- run the command :CompileRun
 api.nvim_set_keymap('n', '<leader>cr', ':CompileRun<CR>', { noremap = true })
 
-api.nvim_set_keymap("n", "<leader>pv", ":Ex<CR>", { noremap = true })
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
@@ -52,3 +51,22 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
+vim.keymap.set('n', '<leader>t', ':terminal<CR>', { noremap = true })
+
+api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+
+-- To use ALT +{h,j,k,l} to navigate windows from any mode:
+api.nvim_set_keymap('t', '˙', "<C-\\><C-N><C-w>h", { noremap = true })
+api.nvim_set_keymap('t', '∆', "<C-\\><C-N><C-w>j", { noremap = true })
+api.nvim_set_keymap('t', '¬', "<C-\\><C-N><C-w>l", { noremap = true })
+api.nvim_set_keymap('t', '˚', "<C-\\><C-N><C-w>k", { noremap = true })
+--
+api.nvim_set_keymap('i', '˙', "<C-\\><C-N><C-w>h", { noremap = true })
+api.nvim_set_keymap('i', '∆', "<C-\\><C-N><C-w>j", { noremap = true })
+api.nvim_set_keymap('i', '¬', "<C-\\><C-N><C-w>l", { noremap = true })
+api.nvim_set_keymap('i', '˚', "<C-\\><C-N><C-w>k", { noremap = true })
+-- 
+api.nvim_set_keymap('n', '˙', "<C-w>h", { noremap = true })
+api.nvim_set_keymap('n', '∆', "<C-w>j", { noremap = true })
+api.nvim_set_keymap('n', '¬', "<C-w>l", { noremap = true })
+api.nvim_set_keymap('n', '˚', "<C-w>k", { noremap = true })

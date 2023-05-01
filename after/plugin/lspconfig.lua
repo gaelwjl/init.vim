@@ -37,7 +37,7 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
   -- Autoformat using lsp when saving a file
-  -- Create a command `:Format` local to the LSP buffer
+  -- Create a command `:Fmt` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Fmt', function(_)
     vim.lsp.buf.format { async = true }
   end, { desc = 'Format current buffer with LSP' })
@@ -58,20 +58,18 @@ local servers = {
   rust_analyzer = {},
   lua_ls = {},
   pylsp = {
-    pylsp = {
-      configurationSources = { "pycodestyle", "flake8" },
-      plugins = {
-        pylint = {
-          enabled = true,
-        },
-        pycodestyle = {
-          indentSize = 2
-        },
-        flake8 = {
-          indentSize = 2
-        }
+    configurationSources = { "pycodestyle", "flake8" },
+    plugins = {
+      pylint = {
+        enabled = true,
       },
-    }
+      pycodestyle = {
+        indentSize = 2
+      },
+      flake8 = {
+        indentSize = 2
+      }
+    },
   }
 }
 
@@ -99,5 +97,5 @@ mason_lspconfig.setup_handlers {
       on_attach = on_attach,
       settings = servers[server_name],
     }
-  end,
+  end
 }

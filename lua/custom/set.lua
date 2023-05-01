@@ -9,6 +9,7 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -30,4 +31,7 @@ vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
 
 -- Set completeopt to have a better completion experience
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
+vim.opt.completeopt = {'menuone', 'noselect', 'noinsert', 'preview'}
+-- shortmess is used to avoid excessive messages
+vim.opt.shortmess = vim.opt.shortmess + { c = true}
+
