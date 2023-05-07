@@ -81,3 +81,7 @@ vim.api.nvim_create_user_command('Init',
     vim.cmd('sp .')
     vim.cmd("term")
   end, { nargs = 0 })
+
+
+local vimrc = vim.fn.stdpath("config") .. "/vimrc.vim"
+vim.cmd.source(vimrc)

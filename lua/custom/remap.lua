@@ -65,8 +65,10 @@ api.nvim_set_keymap('i', '˙', "<C-\\><C-N><C-w>h", { noremap = true })
 api.nvim_set_keymap('i', '∆', "<C-\\><C-N><C-w>j", { noremap = true })
 api.nvim_set_keymap('i', '¬', "<C-\\><C-N><C-w>l", { noremap = true })
 api.nvim_set_keymap('i', '˚', "<C-\\><C-N><C-w>k", { noremap = true })
--- 
+--
 api.nvim_set_keymap('n', '˙', "<C-w>h", { noremap = true })
 api.nvim_set_keymap('n', '∆', "<C-w>j", { noremap = true })
 api.nvim_set_keymap('n', '¬', "<C-w>l", { noremap = true })
 api.nvim_set_keymap('n', '˚', "<C-w>k", { noremap = true })
+
+api.nvim_set_keymap('n', '§', ':Vista!!<CR>', { noremap = true })
