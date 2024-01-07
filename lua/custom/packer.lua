@@ -90,10 +90,11 @@ require('packer').startup(function(use)
   -- multi-lines edit
   use { "mg979/vim-visual-multi", branch = 'master' }
 
-  use 'mbbill/undotree'
   use 'puremourning/vimspector'
 
   use { 'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons' }
+
+  use 'rbong/vim-flog'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
