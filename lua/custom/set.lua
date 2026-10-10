@@ -4,6 +4,9 @@ vim.opt.cursorline = true
 vim.opt.autowrite = true
 vim.opt.autoindent = true
 
+-- Python provider (pynvim lives in a dedicated venv; needed by vimspector)
+vim.g.python3_host_prog = vim.fn.expand('~/.local/share/nvim/venv/bin/python')
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
